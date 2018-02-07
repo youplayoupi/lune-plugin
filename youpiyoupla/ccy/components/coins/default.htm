@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-12 text-right">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>abv</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for list in lists %}
+			<tr>
+				<td>{{list.name}}</td>
+				<td>{{list.abv}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+    </div>
+</div>

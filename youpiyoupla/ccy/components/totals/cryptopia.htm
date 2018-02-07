@@ -1,0 +1,55 @@
+<div class="col s12 text-left">
+	<div class="card blue-grey darken-1">
+		<div class="card-content white-text">
+			<span class="card-title">Cryptopia</span> {% for cryp in cryptopia %}
+			<div id="{{cryp.TradePairId}}" class="col s12">
+				<div class="col s12 m6">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Price</th>
+								<th>Volume</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for buys in cryp.Buy %}
+							<tr>
+								<td>{{buys.Price}}</td>
+								<td>{{buys.Volume}}</td>
+								<td>{{buys.Total}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<div class="col s12 m6">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Price</th>
+								<th>Volume</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for sells in cryp.Sell %}
+							<tr>
+								<td>{{sells.Price}}</td>
+								<td>{{sells.Volume}}</td>
+								<td>{{sells.Total}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			{% endfor %}
+			<ul class="tabs tabs-fixed-width">
+				{% for cryp in cryptopia %}
+				<li class="tab col s3"><a href="#{{cryp.TradePairId}}">{{cryp.Market}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

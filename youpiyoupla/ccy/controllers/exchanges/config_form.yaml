@@ -1,0 +1,10 @@
+name: Exchanges
+form: $/youpiyoupla/ccy/models/exchanges/fields.yaml
+modelClass: Youpiyoupla\Ccy\Models\Exchanges
+defaultRedirect: youpiyoupla/ccy/exchanges
+create:
+    redirect: 'youpiyoupla/ccy/exchanges/update/:id'
+    redirectClose: youpiyoupla/ccy/exchanges
+update:
+    redirect: youpiyoupla/ccy/exchanges
+    redirectClose: youpiyoupla/ccy/exchanges

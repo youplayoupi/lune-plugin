@@ -1,0 +1,55 @@
+<div class="col s12 text-left">
+	<div class="card blue-grey darken-1">
+		<div class="card-content white-text">
+			<span class="card-title">Binance</span> {% for k,cryp in binance %}
+			<div id="{{k}}" class="col s12">
+				<div class="col s12 m6">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Price</th>
+								<th>Volume</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for key,buys in cryp.bids %}
+							<tr>
+								<td>{{key}}</td>
+								<td>{{buys}}</td>
+								<td>{{buys*key}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<div class="col s12 m6">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Price</th>
+								<th>Volume</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for key,sells in cryp.asks %}
+							<tr>
+								<td>{{key}}</td>
+								<td>{{sells}}</td>
+								<td>{{sells*key}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			{% endfor %}
+			<ul class="tabs tabs-fixed-width">
+				{% for k,cryp in binance %}
+				<li class="tab col s3"><a href="#{{k}}">{{cryp.pair}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

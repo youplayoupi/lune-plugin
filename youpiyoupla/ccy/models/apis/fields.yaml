@@ -1,0 +1,25 @@
+fields:
+    user:
+        label: User
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    exchanges:
+        label: Exchange
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    private:
+        label: 'Private key'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    secret:
+        label: Secret
+        span: auto
+        oc.commentPosition: ''
+        type: text

@@ -1,0 +1,10 @@
+name: ledgers
+form: $/youpiyoupla/ccy/models/legders/fields.yaml
+modelClass: Youpiyoupla\Ccy\Models\Legders
+defaultRedirect: youpiyoupla/ccy/ledgers
+create:
+    redirect: 'youpiyoupla/ccy/ledgers/update/:id'
+    redirectClose: youpiyoupla/ccy/ledgers
+update:
+    redirect: youpiyoupla/ccy/ledgers
+    redirectClose: youpiyoupla/ccy/ledgers

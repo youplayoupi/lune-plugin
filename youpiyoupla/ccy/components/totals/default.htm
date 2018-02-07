@@ -1,0 +1,23 @@
+{% if coinId == false %} {% partial '@noid' %} {% else %}
+<div class="row">
+    <div class="col s12 m12 l8">
+		<div class="card blue-grey darken-1">
+			<div class="card-content white-text">
+				<span class="card-title">{{coinTotals.total[:10]}} {{coinTotals.abv}}</span>
+			</div>
+		</div>
+		{% if cryptopiaCheck %} {% partial '@cryptopia' %} {% endif %}
+		{% if binanceCheck %} {% partial '@binance' %} {% endif %}
+		{% if GDAXCheck %} {% partial '@GDAX' %} {% endif %}
+        {% endif %}
+    </div>
+    {% partial '@ledger' %}
+</div>
+<script>
+    $(document).ready(function(){
+        $('ul.tabs').tabs();
+      });
+      		$.request('onRefreshTime', {
+    update: { Totals::mytime: '#myDiv' }
+})
+</script>

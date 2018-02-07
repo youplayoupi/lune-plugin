@@ -1,0 +1,136 @@
+{% set myVal = 0 %}
+<div class="row">
+    <div class="col s12 m8">
+		<div class="card" style="background-color: #1A1E27;">
+			<div class="card-content">
+				<p>Total portfolio Value: {{totalUSD[:10]}}</p>
+				<p>Total portfolio Buy Value: {{totalBuyUSD[:10]}}</p>
+				<p>Total portfolio Sell Value: {{totalSellUSD[:10]}}</p>
+			</div>
+		</div>
+		<script>
+		window.onload = function() {
+
+		var chart = new CanvasJS.Chart("chartContainer", {
+			theme: "dark2", // "light1", "light2", "dark1", "dark2"
+			exportEnabled: true,
+			animationEnabled: true,
+			title: {
+				text: "Crypto per coin#"
+			},
+			data: [{
+				type: "pie",
+				startAngle: 25,
+				toolTipContent: "<b>{label}</b>: {y}%",
+				showInLegend: "true",
+				legendText: "{label}",
+				indexLabelFontSize: 16,
+				indexLabel: "{label} - {y}%",
+				dataPoints: [
+				{% for graph1 in graph1s %}
+					{{graph1.js|raw}}
+				{% endfor %}
+				]
+			}]
+		});
+		chart.render();
+
+		var chart2 = new CanvasJS.Chart("chartContainer2", {
+			theme: "dark2", // "light1", "light2", "dark1", "dark2"
+			exportEnabled: true,
+			animationEnabled: true,
+			title: {
+				text: "Crypto per Value"
+			},
+			data: [{
+				type: "pie",
+				startAngle: 25,
+				toolTipContent: "<b>{label}</b>: {y}%",
+				showInLegend: "true",
+				legendText: "{label}",
+				indexLabelFontSize: 16,
+				indexLabel: "{label} - {y}%",
+				dataPoints: [
+				{% for graph2 in graph2s %}
+					{{graph2.js|raw}}
+				{% endfor %}
+				]
+			}]
+		});
+		chart2.render();
+		var chart3 = new CanvasJS.Chart("chartContainer3",
+		{
+			theme: "dark2",
+			title:{
+				text: "Realized and unrealized gain"
+			},
+			axisY:{
+				title:"Price",
+			},
+			data: [
+			{
+				type: "stackedColumn",
+				legendText: "Current value",
+				showInLegend: "true",
+				dataPoints: [
+				{% for graph3 in graph3s %}
+					{{graph3.js1|raw}}
+				{% endfor %}
+				]
+			},  {
+				type: "stackedColumn",
+				legendText: "Amount sold value",
+				showInLegend: "true",
+				indexLabelPlacement: "outside",
+				dataPoints: [
+				{% for graph3 in graph3s %}
+					{{graph3.js2|raw}}
+				{% endfor %}
+				]
+			},  {
+				type: "stackedColumn",
+				legendText: "Amount buy value",
+				showInLegend: "true",
+				indexLabelPlacement: "outside",
+				dataPoints: [
+				{% for graph3 in graph3s %}
+					{{graph3.js3|raw}}
+				{% endfor %}
+				]
+			}
+			]
+		});
+		chart3.render();
+		}
+		</script>
+		
+		<div id="chartContainer2" style="height: 370px; width: 100%; margin-bottom:10px;"></div>
+		<div id="chartContainer3" style="height: 370px; width: 100%; margin-bottom:10px;"></div>
+		<div id="chartContainer" style="height: 370px; width: 100%; margin-bottom:10px;"></div>
+
+		
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+	</div>
+	<div class="col s12 m4" style="background-color: #1A1E27;">
+		{% for list in coinTotals %}
+		{% if mappings[myVal].total>0 %}
+	<div class="card" style="background-color: #1A1E27;">
+		<div class="card-content">
+			<a href="./card/{{list.coins_id}}" class="btn-floating halfway-fab waves-effect waves-light"><img src="{{mappings[myVal].icon}}" width="37px" alt="{{mappings[myVal].symbol}}"></a>  {{mappings[myVal].symbol}}
+		  <p>Total: {{mappings[myVal].total[:10]}}</p>
+		  <p>Total Buy: {{mappings[myVal].BuyUSD[:10]}}</p>
+		  <p>Total Sell: {{mappings[myVal].SellUSD[:10]}}</p>
+		  <p>USD Value: {{mappings[myVal].totalprice_usd[:10]}}</p>
+		  <p>USD Rate: {{mappings[myVal].price_usd[:10]}}</p>
+		  <p>Last 24h: {{mappings[myVal].percent_change_24h}}</p>
+		</div>
+		<div class="card-action">
+		  <a href="./card/{{list.coins_id}}">See TXs detail</a>
+		</div>
+	</div>
+	{% set myVal = myVal + 1 %}
+	{% endif %} 
+	{% endfor %}
+	</div>
+</div>

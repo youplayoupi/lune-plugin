@@ -1,0 +1,16 @@
+columns:
+    name:
+        label: 'youpiyoupla.ccy::lang.plugin.name'
+        type: text
+        searchable: true
+        sortable: true
+    abv:
+        label: Code
+        type: text
+        searchable: true
+        sortable: true
+    icon:
+        label: Icon
+        type: text
+        searchable: true
+        sortable: true

@@ -1,0 +1,33 @@
+<div class="col s12 m12 l4" style="background-color: #1A1E27;">
+    {% for list in coinLedgers %}
+    <div class="card" style="background-color: #1A1E27;">
+        <div class="card-content">
+            {% if list.abv == coinTotals.abv %} {% if list.buyorsell == false %}
+            <span class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">indeterminate_check_box</i></span>
+            <span class="card-title">Sell on {{list.name}}</span>
+            <p style="text-align: right;">{{list.date}}</p>
+            <p>Amount: {{list.total[:10] }} {{list.ccy}} </p>
+            <p>Total: {{list.amount[:10] }} {{list.abv}}</p>
+            {% else %}
+            <a href="./card/{{list.coins_id}}" class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add</i></a>
+            <span class="card-title">Buy  on {{list.name}}</span>
+            <p style="text-align: right;">{{list.date}}</p>
+            <p>Amount: {{list.amount[:10] }} {{list.abv}} </p>
+            <p>Total: {{list.total[:10]}} {{list.ccy}} </p>
+            {% endif %} {% else %} {% if list.buyorsell == true %}
+            <span class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">indeterminate_check_box</i></span>
+            <span class="card-title">Sell on {{list.name}}</span>
+            <p style="text-align: right;">{{list.date}}</p>
+            <p>Amount: {{list.total[:10] }} {{list.ccy}}</p>
+            <p>Total: {{list.amount[:10] }} {{list.abv}} </p>
+            {% else %}
+            <a href="./card/{{list.coins_id}}" class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add</i></a>
+            <span class="card-title">Buy  on {{list.name}}</span>
+            <p style="text-align: right;">{{list.date}}</p>
+            <p>Amount: {{list.amount[:10] }} {{list.abv}} </p>
+            <p>Total: {{list.total[:10]}} {{list.ccy}} </p>
+            {% endif %} {% endif %}
+        </div>
+    </div>
+    {% endfor %} {{ coinLedgers.render|raw }}
+</div>

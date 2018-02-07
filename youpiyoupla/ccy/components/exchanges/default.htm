@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<p>Due to the use of cryptocompare API to calculate the coin vs FIAT rates, there is a hourly limit of operations that can be processed.</p>
+			<p>Operations remaining this hour: {{ limits["CallsLeft"]["Histo"] }}</p>
+			<p>Please ensure to have less transactions to be processed than the remaining limit otherwise the FIAT rates calculation will be wrong</p>
+		</div>
+	</div>
+{% partial '@csv' %}
+{% partial '@api' %}
+</div>

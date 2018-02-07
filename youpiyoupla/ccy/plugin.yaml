@@ -1,0 +1,15 @@
+plugin:
+    name: 'youpiyoupla.ccy::lang.plugin.name'
+    description: 'youpiyoupla.ccy::lang.plugin.description'
+    author: youpiyoupla
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item2:
+        label: Exchanges
+        url: youpiyoupla/ccy/exchanges
+        icon: icon-life-ring
+    Coins:
+        label: Coins
+        url: youpiyoupla/ccy/coins
+        icon: icon-life-ring

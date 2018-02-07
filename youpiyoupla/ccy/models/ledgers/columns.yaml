@@ -1,0 +1,32 @@
+columns:
+    users:
+        label: User
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: user
+    coins:
+        label: Coin
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: coins
+    exchanges:
+        label: Exchange
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: exchanges
+    currency_id:
+        label: Curency
+        type: text
+        searchable: true
+        sortable: true
+    amount:
+        label: Amount
+        type: number
+        searchable: true
+        sortable: true

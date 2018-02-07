@@ -1,0 +1,37 @@
+fields:
+    coins:
+        label: Coin
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    exchanges:
+        label: Exchange
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    rate:
+        label: Rate
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    currency_id:
+        label: Curency
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    amount:
+        label: Amount
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    user:
+        label: User
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        type: relation

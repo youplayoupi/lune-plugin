@@ -1,0 +1,10 @@
+name: Apis
+form: $/youpiyoupla/ccy/models/apis/fields.yaml
+modelClass: Youpiyoupla\Ccy\Models\Apis
+defaultRedirect: youpiyoupla/ccy/apis
+create:
+    redirect: 'youpiyoupla/ccy/apis/update/:id'
+    redirectClose: youpiyoupla/ccy/apis
+update:
+    redirect: youpiyoupla/ccy/apis
+    redirectClose: youpiyoupla/ccy/apis

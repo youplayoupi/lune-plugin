@@ -1,0 +1,12 @@
+list: $/youpiyoupla/ccy/models/apis/columns.yaml
+modelClass: Youpiyoupla\Ccy\Models\Apis
+title: Apis
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'youpiyoupla/ccy/apis/update/:id'

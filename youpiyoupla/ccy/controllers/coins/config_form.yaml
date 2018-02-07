@@ -1,0 +1,10 @@
+name: Coins
+form: $/youpiyoupla/ccy/models/coins/fields.yaml
+modelClass: Youpiyoupla\Ccy\Models\Coins
+defaultRedirect: youpiyoupla/ccy/coins
+create:
+    redirect: 'youpiyoupla/ccy/coins/update/:id'
+    redirectClose: youpiyoupla/ccy/coins
+update:
+    redirect: youpiyoupla/ccy/coins
+    redirectClose: youpiyoupla/ccy/coins

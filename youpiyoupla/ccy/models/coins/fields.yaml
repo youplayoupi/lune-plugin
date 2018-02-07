@@ -1,0 +1,16 @@
+fields:
+    name:
+        label: 'youpiyoupla.ccy::lang.plugin.name'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    abv:
+        label: Code
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    icon:
+        label: 'Icon url'
+        oc.commentPosition: ''
+        span: auto
+        type: text

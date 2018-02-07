@@ -1,0 +1,25 @@
+columns:
+    users:
+        label: User
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: user
+    exchanges:
+        label: Exchange
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: exchanges
+    private:
+        label: Private
+        type: text
+        searchable: true
+        sortable: true
+    secret:
+        label: Secret
+        type: text
+        searchable: true
+        sortable: true
