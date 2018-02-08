@@ -17,18 +17,10 @@ Are you looking for a portfolio that you can update via API instead of inputing 
 - Users
 
 3) Download lune-theme and lune-plugin from github and copy in theme and plugin folder. Logout from the backend and login again
-4) From the administration panel go to the "Exchanges" and add the following (order is important since code is based on IDs):
-- Binance (id 1)
-- Cryptopia (id 2)
-- GDAX (id 3)
-- Coinbase (id 4)
-5) From the administration panel go to the "coins" and add the following
-- Euros EUR
-- Dollars USD
-6) From the administration panel go to "Settings/front-end theme" and activate the lune theme
-7) Click on customize lune theme, go to asset and activate "OctoberCMS Front-end Javascript Framework"
-8) You can register a new user from the frontend or create (and manually activate) a user from the backend (admin users do not have access to frontend)
-9) Login with frontend user on yoururl.com/account (you need to to step 6 before) and go to yoururl.com/ledger, click on the green button "import coins" to import coins info to DB
+4) From the administration panel go to "Settings/front-end theme" and activate the lune theme
+5) Click on customize lune theme, go to asset and activate "OctoberCMS Front-end Javascript Framework"
+6) You can register a new user from the frontend or create (and manually activate) a user from the backend (admin users do not have access to frontend)
+7) Login with frontend user on yoururl.com/account (you need to to step 6 before) and go to yoururl.com/ledger, click on the green button "import coins" to import coins info to DB
 
 ### Technical info
 This project is based on Octobercms a Laravel based CMS.
